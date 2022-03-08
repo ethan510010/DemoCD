@@ -25,8 +25,6 @@ handler.on("push", async function (event) {
   );
   console.log(await exec('echo "start pulling data"'));
   await exec(`git checkout master`);
-  console.log("git checkout的結果", checkoutResult);
   await exec(`git pull origin master`);
-  console.log("git pull的結果", checkoutResult);
   await exec("pm2 restart DemoCD");
 });
