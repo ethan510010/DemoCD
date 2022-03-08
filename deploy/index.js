@@ -1,6 +1,6 @@
-const http = require("http");
-const createHandler = require("github-webhook-handler");
-const handler = createHandler({ path: "/", secret: "root" });
+var http = require("http");
+var createHandler = require("github-webhook-handler");
+var handler = createHandler({ path: "/", secret: "root" });
 const { promisify } = require("util");
 const exec = promisify(require("child_process").exec);
 
